@@ -12,7 +12,7 @@ import com.gl.tickettracker.model.Ticket;
 @Repository
 public interface TicketRepository extends JpaRepository<Ticket, Long>{
 
-	@Query(value = "SELECT * FROM Ticket ticket WHERE CONCAT(ticket.ticketTitle,' ', ticket.ticketDescription) LIKE %:keyword%", nativeQuery = true)
+	@Query(value = "SELECT * FROM Ticket ticket WHERE CONCAT(ticket.ticket_Title,' ', ticket.ticket_Description) LIKE %:keyword%", nativeQuery = true)
 	List<Ticket> findByKeyword(@Param("keyword") String keyword);
 
 }
